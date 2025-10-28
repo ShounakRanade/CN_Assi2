@@ -12,9 +12,6 @@
   - [PART_B: Default Resolver Experiments](#part_b-default-resolver-experiments)
   - [PART_C: Custom DNS Resolver](#part_c-custom-dns-resolver)
   - [PART_D: Custom DNS Server + Host Interface](#part_d-custom-dns-server-host-interface)
-- [textfiles: Input Domain Lists](#textfiles-input-domain-lists)
-- [Notes on JSON Files](#notes-on-json-files)
-- [Analysis and Results](#analysis-and-results)
 ***
 
 ## Part Breakdown
@@ -64,22 +61,5 @@ Run this code on DNS server which will listen to any name resolution request fro
 
 ***
 
-## textfiles: Input Domain Lists
-
-- **temp_h1.txt ... temp_h4.txt**  
-  - Clean lists of domains parsed from PCAP files via tshark, one for each host node.
-  - Used as input for both default and custom resolver runs.
-
-***
-
-## Analysis and Results
-
-- **Latencies, throughput, and cache hits** are logged and compared between default resolver runs (systemd, getaddrinfo) and custom iterative/server implementations.
-- **Graphs and tables** are generated (see report PDF or notebook) using the output JSON logs.
-- **Observations:**  
-  - Default resolver is often faster due to direct recursive querying or system cache.
-  - Custom resolver performance improves with cache and multi-server querying enabled.
-
-***
 
 
